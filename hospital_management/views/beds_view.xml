@@ -59,15 +59,6 @@
     </record>
 
 
-    <menuitem id="hospital_root"
-              name="Hospital Management"
-              sequence="0"/>
-
-    <menuitem id="hospital_hospital_root"
-              name="Infrastructure Management"
-              parent="hospital_root"
-              sequence="0"/>
-
     <menuitem id="hospital_bed"
               name="Bed"
               parent="hospital_hospital_root"

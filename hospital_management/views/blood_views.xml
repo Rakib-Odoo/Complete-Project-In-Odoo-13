@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- blood tree view -->
+    <record id="blood_tree_view" model="ir.ui.view">
+        <field name="name">hospital.blood.tree</field>
+        <field name="model">hospital.blood</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="1" delete="1" multi_edit="1">
+                <field name="blood_grp"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- blood group action -->
+    <record id="action_blood" model="ir.actions.act_window">
+        <field name="name">Blood</field>
+        <field name="res_model">hospital.blood</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <!-- genetic risk tree view -->
+    <record id="genetic_tree_view" model="ir.ui.view">
+        <field name="name">genetic.risks.tree</field>
+        <field name="model">genetic.risk</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="1" delete="1" multi_edit="1">
+                <field name="risks"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- genetic risks action -->
+    <record id="action_risks" model="ir.actions.act_window">
+        <field name="name">Genetic Risks</field>
+        <field name="res_model">genetic.risk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="hospital_patient_configuration_root"
+              name="Patient"
+              parent="hospital_configuration_root"
+              sequence="1"/>
+
+    <menuitem id="hospital_blood"
+              name="Blood Group"
+              action="action_blood"
+              parent="hospital_patient_configuration_root"
+              sequence="2"/>
+
+    <!-- Genetic Risks Menu -->
+    <menuitem id="genetic_risks"
+              name="Genetic Risks"
+              action="action_risks"
+              parent="hospital_patient_configuration_root"
+              sequence="3"/>
+
+</odoo>

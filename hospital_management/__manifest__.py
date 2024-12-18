@@ -13,7 +13,10 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'views/menu_view.xml',
         'views/beds_view.xml',
+        'views/blood_views.xml',
+
     ],
     'installable': True,
     'auto_install': False,

@@ -15,4 +15,11 @@ class HospitalBed(models.Model):
                                  ('clinitron', 'Clinitron'),
                                  ], string='Bed Type')
     note = fields.Text(string='Notes')
-    date_bed_assign = fields.Date(default=fields.Date.today, string='Date')
+    date_bed_assign = fields.Date(default=fields.Date.today, string='Assign Date')
+    bed_rent = fields.Float(string='Bed Rent', help='The charge for the bed')
+    repair_date = fields.Date(string='Repair Date', help='The next repair date')
+    repair_charge = fields.Float(string='Repair Charge', help="The repairing charge whether any damage is happened")
+    state = fields.Selection([
+        ('available','Available'),
+        ('unavailable', 'Unavailable')
+    ], string='Status', default='available')

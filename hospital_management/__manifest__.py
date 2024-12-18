@@ -13,8 +13,9 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'views/beds_view.xml',
     ],
     'installable': True,
     'auto_install': False,
-    'application': False,
+    'application': True,
 }

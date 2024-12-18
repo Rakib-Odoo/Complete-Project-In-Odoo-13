@@ -9,6 +9,8 @@
                 <field name="bed_no"/>
                 <field name="bed_type"/>
                 <field name="date_bed_assign"/>
+                <field name="repair_date"/>
+                <field name="bed_rent"/>
                 <field name="note"/>
             </tree>
         </field>
@@ -19,12 +21,22 @@
         <field name="model">hospital.bed</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
                 <sheet>
                     <group>
-                        <field name="bed_no"/>
-                        <field name="bed_type"/>
-                        <field name="date_bed_assign"/>
-                        <field name="note"/>
+                        <group>
+                            <field name="bed_no"/>
+                            <field name="bed_type"/>
+                            <field name="date_bed_assign"/>
+                            <field name="bed_rent"/>
+                        </group>
+                        <group>
+                            <field name="repair_date"/>
+                            <field name="repair_charge"/>
+                            <field name="note"/>
+                        </group>
                     </group>
                 </sheet>
             </form>

@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+
+    <record id="bed_tree_view" model="ir.ui.view">
+        <field name="name">hospital.bed.tree</field>
+        <field name="model">hospital.bed</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="bed_no"/>
+                <field name="bed_type"/>
+                <field name="date_bed_assign"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="bed_form_view" model="ir.ui.view">
+        <field name="name">hospital.bed.form</field>
+        <field name="model">hospital.bed</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="bed_no"/>
+                        <field name="bed_type"/>
+                        <field name="date_bed_assign"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="actions_hospital_bed" model="ir.actions.act_window">
+        <field name="name">Bed</field>
+        <field name="res_model">hospital.bed</field>
+        <field name="view_mode">tree,form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Beds
+            </p>
+            <p>
+                You can create beds here.
+            </p>
+        </field>
+    </record>
+
+
     <menuitem id="hospital_root"
               name="Hospital Management"
               sequence="0"/>
@@ -12,6 +59,7 @@
     <menuitem id="hospital_bed"
               name="Bed"
               parent="hospital_hospital_root"
+              action="actions_hospital_bed"
               sequence="0"/>
 
 </odoo>
